@@ -1,11 +1,30 @@
-let value = prompt("Informe um dado:","");
-if(confirm("Deseja verificar o tipo do dado informado?")){
-    if(value == "true" || value == "True" || value == "False" || value == "false"){
-        document.write("<h1> O tipo do seu dado é booleano.</h1>")
-    } else if(!isNaN(value)){
-        document.write("<h1> O tipo do seu dado é um número.</h1>");
+var Valores = new Array();
+function addValor(valor) {   
+    if(valor !== null && valor !== " "){
+        Valores.push(valor);
+        Valores.sort();      
     } else {
-        document.write("<h1> O tipo do seu dado é uma string.</h1>");}
-} else {
-    document.write("<h1> Obrigado por visitar esta página!</h1>")
+        alert("Valor inválido!");
+    }
+    verValor(Valores);
+    console.log(Valores); 
 }
+
+function verValor(Valores) {
+    const lista = document.getElementById('Valores');
+    lista.innerHTML = ''; // Limpa a lista
+    Valores.forEach(valor => {
+        const li = document.createElement('li');
+        li.textContent = valor;
+        lista.appendChild(li);
+    });
+}
+
+document.getElementById('formValores').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const valor = document.getElementById('valor').value;
+    if (valor) {
+        addValor(valor);
+        document.getElementById('valor').value = '';
+    }
+});
