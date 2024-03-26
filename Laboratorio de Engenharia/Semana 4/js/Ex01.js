@@ -10,10 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
    function submitFormulario() {
 
       let tipoPessoa = document.querySelector('input[name="tipoPessoa"]:checked').value;
-
       let pessoa;
-      if (tipoPessoa === 'aluno') {
-         
+
+      if (tipoPessoa === 'aluno') {   
          var nome = document.getElementById('nome').value;
          var email = document.getElementById('email').value;
          var dataNasc = document.getElementById('dataNasc').value;
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
          var curso = document.getElementById('curso').value;
          
          pessoa = new Aluno(nome, email, dataNasc, telFixo, telCel, curso);
-
          Swal.fire({
             title: 'Aluno Cadastrado!',
             html: `Nome: ${nome}<br>
@@ -66,9 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
             location.reload();
          });
 
-      } else {
-         alert('Por favor, selecione um tipo de pessoa.');
-         return; 
       }
    }
 
@@ -85,10 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
            } else if (tipoPessoa === 'professor') {
                tipoAluno.style.display = 'none';
                tipoProfessor.style.display = 'block';
-           } else {
-               tipoAluno.style.display = 'none';
-               tipoProfessor.style.display = 'none';
-           }
+           } 
        });
    });
 });
