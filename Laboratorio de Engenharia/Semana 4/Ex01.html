@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Formulário</title>
+</head>
+<body>
+    <div class="text-center-block" style="padding: 0.9%;" style="max-width: auto;" >
+    <button onclick="window.location='Atividades.html'" class="btn btn-dark">
+        Voltar
+    </button>
+    </div>
+
+    <div style="padding: 5%;" style="max-width: auto;" >
+        <form class="row g-3" id="formulario">
+
+            <div class="form-check">   
+                <input type="radio" id="aluno" name="tipoPessoa" value="aluno">
+                <label style="padding-right: 3%" class="form-label" for="aluno">Aluno</label>
+                <input type="radio" id="professor" name="tipoPessoa" value="professor">
+                <label class="form-label" for="professor">Professor</label>
+            </div>
+
+            <div class="col-md-12">
+                <label class="form-label" for="nome">Nome:</label>
+                <input class="form-control" type="text" id="nome" name="nome" required>
+            </div>
+ 
+                <div class="col-9">
+                    <label class="form-label" for="email">E-mail:</label>
+                    <input class="form-control" type="text" id="email" name="email" required>
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="dataNasc">Data de Nascimento:</label>
+                    <input class="form-control" type="date" id="dataNasc" name="dataNasc" required>
+                </div>
+  
+          
+                <div class="col-6">
+                    <label class="form-label" for="telFixo">Telefone Fixo:</label>
+                    <input class="form-control" type="tel" id="telFixo" name="telFixo" placeholder="18 3999-9999">
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="telCel">Telefone Celular:</label>
+                    <input class="form-control" type="tel" id="telCel" name="telCel" required placeholder="18 99999-9999">
+                </div>
+
+                
+
+            <div class="col-6" id="tipoAluno" style="display: none;">
+                    <label class="form-label" for="curso">Curso:</label>
+                    <input class="form-control" type="text" id="curso" name="curso">
+                
+            </div>
+
+            <div class="col-6">
+                <label class="form-label" for="matricula">Matrícula:</label>
+                <input class="form-control" type="text" id="matricula" name="matricula" required>
+            </div>
+
+            <div class="col-12" id="tipoProfessor" style="display: none;">
+                    <label class="form-label" for="area">Área:</label>
+                    <input class="form-control" type="text" id="area" name="area">
+         
+                    <label class="form-label" for="lattes">Lattes:</label>
+                    <input class="form-control" type="text" id="lattes" name="lattes">
+            </div>
+                
+            <button class="btn btn-dark" type="submit" id="enviar">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/Entities/pessoa.js"></script>
+    <script src="js/Entities/aluno.js"></script>
+    <script src="js/Entities/professor.js"></script>
+    <script src="js/Ex01.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
