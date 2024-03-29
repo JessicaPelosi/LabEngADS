@@ -1,0 +1,36 @@
+/* Estilos para centralizar a div */
+.centralizar-div {
+    /* Define a largura da div */
+    width: 400px;
+    /* Define a altura da div */
+    height: 550px;
+    /* Define a cor de fundo da div */
+    background-color: #f0f0f0;
+    /* Define a borda da div */
+    border: 2px solid #000;
+    /* Define a margem automática para centralizar a div horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+    /* Define a margem automática para centralizar a div verticalmente */
+    margin-top: 50px;
+    margin-bottom: 100px;
+    /* Define o posicionamento da div */
+    position: relative;
+    /* Define o tamanho máximo da div para evitar que ela ultrapasse os limites da tela */
+    max-width: 100%;
+    text-align: center;
+    padding-top: 2%;
+    border-radius: 4%;
+}
+p {
+    
+}
+/* Estilos para garantir que a div seja centralizada corretamente em dispositivos móveis */
+@media (max-width: auto) {
+    .centralizar-div {
+        /* Ajusta a margem superior para dispositivos móveis */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
