@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Exercício 01</title>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="https://play-lh.googleusercontent.com/CVZHrj0Pt2TeqOGwjMeSUIwAt_DP1Wv77Vehxi6mDT0_Vj2kk3GNuDLTDO50YqMKPali=w240-h480-rw" alt="" width="30" height="24">
+      <a class="navbar-brand">Laboratório de engenharia</a>
+      <form class="d-flex"></form>
+    </div>
+  </nav>
+  <div class="text-block" style="padding: 0.5%; max-width: auto;">
+    <button onclick="window.location='Atividades.html'" class="btn btn-dark">Voltar</button>  
+    <h1>1. </h1>
+    <p>Implemente uma página HTML com um componente React que simule um letreiro com o texto "Venha estudar na Fatec". O texto deve aparecer letra a letra na página como se estivesse sendo digitado.</p>
+  
+      <div id="root" class="position-relative text-center" style="color: aqua; text-shadow: 2px 1px 0 black;">
+      
+      <script type="text/babel">
+        class Letreiro extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+                texto: '',
+                index: 0
+            };
+          }
+
+          componentDidMount() {
+              this.timerID = setInterval(() => this.tick(), 200);
+          }
+
+          componentWillUnmount() {
+              clearInterval(this.timerID);
+          }
+
+          tick() {
+            const { texto, index } = this.state;
+            if (index >= this.props.texto.length) {
+                this.setState({
+                    texto: '',
+                    index: 0
+                });
+            } else {
+                const novoTexto = this.props.texto.slice(0, index + 1);
+                this.setState({
+                    texto: novoTexto,
+                    index: index + 1
+                });
+            }
+          }
+
+          render() {
+              return <h1>{this.state.texto}</h1>;
+          }
+        }
+
+        ReactDOM.render(
+            <Letreiro texto="Venha estudar na Fatec!     " />,
+            document.getElementById('root')
+        );
+      </script>
+    </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
